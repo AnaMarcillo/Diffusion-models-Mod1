@@ -77,7 +77,7 @@ class InpaintDataset(data.Dataset):
             mask = get_irregular_mask(self.image_size)
         elif self.mask_mode == 'free_form':
             mask = brush_stroke_mask(self.image_size)
-        elif self.mask_mode == 'hybrid':
+        elif self.mask_mode == 'cerebro':
             regular_mask = bbox2mask(self.image_size, random_bbox())
             irregular_mask = brush_stroke_mask(self.image_size, )
             mask = regular_mask | irregular_mask
